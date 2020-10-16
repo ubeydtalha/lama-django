@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="my_auctions">
+    <div class="row row-cols-1 row-cols-md-3">
+    {% for auction in auctions%}
+    <div class="col mb-4">
+        
+            <div class="card">
+                <img src="{{auction.auction_image.url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <a href="auction/{{auction.id}}"> <h5 class="card-title">{{auction.name}}</h5></a>
+                    <p class="card-text">{{auction.feature|safe|truncatewords:35}}</p>
+                     <a href="auction/{{auction.id}}">  <p> Devamını oku...</p>   </a>
+                </div>
+            </div> </div>
+        {% endfor %}
+
+   
+
+    </div>
+</div>
+{% endblock body %}

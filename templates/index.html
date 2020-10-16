@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+
+{% block body %}
+
+<link rel="stylesheet" href="{% static 'style.css' %}">
+    <h3>Anasayfa</h3>
+
+    {% for x in deneme %}
+        <li>{{x}}</li>
+    {% endfor %}
+
+
+
+
+
+{% endblock body %}
+
+

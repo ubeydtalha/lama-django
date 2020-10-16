@@ -1,0 +1,59 @@
+{% extends 'layout.html' %} {% block body %} {% load crispy_forms_tags %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+<div class="row">
+    <div class="col">
+        <h3>{{request.user.username}},Kontrol Paneliniz</h3>
+        <hr>
+
+    </div>
+
+</div>
+<div class="row">
+    <div class="col">
+        <a href="/auctions/create_auction" class="btn btn-primary">Makale Ekle</a>
+
+
+    </div>
+
+</div>
+<hr>
+
+
+<table class="table table-dark">
+    {% if auctions %}
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">İsim</th>
+            <th scope="col">Author</th>
+            <th scope="col">Date</th>
+            <th scope="col">Update</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {% for i in auctions %}
+        <tr>
+            <th scope="row"> <a href="/auctions/auction/{{i.id}}">{{i.id}}</a></th>
+            <td><a href="/auctions/auction/{{i.id}}">{{i.name}}</a></td>
+            <td>{{i.author.username}}</td>
+            <td>{{i.created_date}}</td>
+            <td><a href="/auctions/edit/{{i.id}}" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/auctions/delete/{{i.id}}" class="btn btn-danger">Sil</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    {% else %}
+    <thead>
+        <tr>
+            <th scope="col">Henüz müzayeden yok</th>
+        </tr>
+    </thead>
+    {% endif %}
+
+</table>
+
+{% endblock body %}
