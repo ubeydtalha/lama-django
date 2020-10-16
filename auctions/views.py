@@ -34,6 +34,7 @@ def create_auction(request):
     if form.is_valid():
         
         
+        
         auctions =  form.save(commit=False)
         auctions.author = request.user
        
@@ -59,7 +60,7 @@ def auctions(request):
 
 @login_required(login_url= "user:login_user")
 def edit(request,id):
-    
+
 
     auction = get_object_or_404(Auctions,id=id)   
 
