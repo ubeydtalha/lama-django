@@ -59,6 +59,7 @@ def auctions(request):
 
 @login_required(login_url= "user:login_user")
 def edit(request,id):
+    
 
     auction = get_object_or_404(Auctions,id=id)   
 
