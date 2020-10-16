@@ -85,7 +85,7 @@ DATABASES = {
         'ENGINE': 'djongo',
         'NAME': "web",
         'CLIENT':{
-            'host':"mongodb://Majin:Xw4myQXWPi4qoTS9Fxx9uMDisQB0TBcSZ1d6ltHkLJ0Rj7WL5Me4dtNMUnQhslkHX7eP1nljXgiHkUAYZ30zDbFnkguFu6xw0ZqZ@134.122.85.164:27037/?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&ssl=false"
+            'host':""
         ,}
     },
     'lama':{
